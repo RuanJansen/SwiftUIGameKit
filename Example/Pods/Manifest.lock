@@ -1,0 +1,16 @@
+PODS:
+  - SwiftUIGameKit (0.1.0)
+
+DEPENDENCIES:
+  - SwiftUIGameKit (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftUIGameKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwiftUIGameKit: 63214cca1ac380cc81adfa8c9c26502fe766a9dd
+
+PODFILE CHECKSUM: 3d664993a659a4e6f0505a84bd6f7a6a7272bc35
+
+COCOAPODS: 1.15.2

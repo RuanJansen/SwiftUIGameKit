@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let SwiftUIView = DashboardView()
+        let viewContoller = UIHostingController(rootView: SwiftUIView)
+        modalPresentationStyle = .fullScreen
+        present(viewContoller, animated: animated)
     }
 
 }

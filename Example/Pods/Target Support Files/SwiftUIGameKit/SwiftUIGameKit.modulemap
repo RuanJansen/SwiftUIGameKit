@@ -1,0 +1,6 @@
+framework module SwiftUIGameKit {
+  umbrella header "SwiftUIGameKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
