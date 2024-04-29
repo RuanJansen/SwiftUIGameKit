@@ -21,12 +21,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let SwiftUIView = DashboardView()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let SwiftUIView =  DashboardView()
         let viewContoller = UIHostingController(rootView: SwiftUIView)
-        modalPresentationStyle = .fullScreen
-        present(viewContoller, animated: animated)
+        viewContoller.modalPresentationStyle = .fullScreen
+        self.present(viewContoller, animated: animated)
     }
 
 }
