@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'SwiftUIGameKit_Example' do
+  pod 'SwiftUIGameKit', :path => '../'
+
+  target 'SwiftUIGameKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
