@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftUIGameKit'
-  s.version          = '1.0.0'
+  s.version          = '0.1.0'
   s.summary          = 'A short description of SwiftUIGameKit.'
 
 # This description is used to generate tags and improve search results.
@@ -23,7 +23,7 @@ TODO: Add long description of the pod here.
 
   s.homepage         = 'https://github.com/Ruan Jansen/SwiftUIGameKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  # s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ruan Jansen' => 'ruan.d.jansen@gmail.com' }
   s.source           = { :git => 'https://github.com/Ruan Jansen/SwiftUIGameKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
