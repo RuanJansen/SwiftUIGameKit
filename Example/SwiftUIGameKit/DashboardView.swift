@@ -12,6 +12,7 @@ import SwiftUIGameKit
 struct DashboardView: View {
     @State private var position: CGPoint = .zero
     @State private var controllerPosition: CGPoint = CGPoint(x: 200, y: 500)
+    @State private var controllerType: ControllerType = .drag
     @State private var isActive: Bool = false
 
     var body: some View {
@@ -28,24 +29,33 @@ struct DashboardView: View {
                     }
             }
         }
-        .controlable(controllerType: .joystick, controllerPosition: .onTouch) { angle, isActive in
+        .controlable(controllerType: controllerType) { angle, isActive in
             self.isActive = isActive
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-                if !self.isActive {
-                    timer.invalidate()
-                } else {
-                    updatePosition(with: angle)
+            switch controllerType {
+                case .joystick(_):
+                    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
+                        if !self.isActive {
+                            timer.invalidate()
+                        } else {
+                            updatePosition(with: angle, by: 0.5)
+                        }
+                    }
+                case .drag:
+                    updatePosition(with: angle, by: 5)
+                case .arrows(_):
+                updatePosition(with: angle, by: 5)
                 }
-            }
+
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    private func updatePosition(with angle: Double) {
+    private func updatePosition(with angle: Double, by value: Double) {
         let angleInRadians = angle * .pi / 180.0
 
-        let deltaX = cos(angleInRadians) * 0.5
-        let deltaY = sin(angleInRadians) * 0.5
+        let deltaX = cos(angleInRadians) * value
+        let deltaY = sin(angleInRadians) * value
 
         position.x += CGFloat(deltaX)
         position.y += CGFloat(deltaY)

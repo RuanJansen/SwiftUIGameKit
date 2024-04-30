@@ -8,9 +8,9 @@
 import Foundation
 
 public enum ControllerType {
-    case joystick
+    case joystick(position: ControllerPosition)
     case drag
-    case arrows
+    case arrows(position: CGPoint)
 }
 
 public enum ControllerPosition {

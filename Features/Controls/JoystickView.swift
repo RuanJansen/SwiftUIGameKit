@@ -22,7 +22,6 @@ struct JoystickView: View {
          input: @escaping (Double, Bool)-> Void) {
         self.controllerposition = controllerposition
         self.input = input
-
     }
 
     private var isActive: Bool {
