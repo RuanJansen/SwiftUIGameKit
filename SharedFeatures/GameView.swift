@@ -10,6 +10,7 @@ import SwiftUI
 
 public struct GameView<Content: View>: View, Controlable {
     public let content: () -> Content
+    public var tappedPosition: CGPoint?
 
     public init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content

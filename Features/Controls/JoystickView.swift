@@ -9,17 +9,24 @@ import Foundation
 import SwiftUI
 
 struct JoystickView: View {
-    @State private var location: CGPoint = CGPoint(x: 200, y: 500)
-    @State private var innerCircleLocation: CGPoint = CGPoint(x: 200, y: 500)
+    @State private var location: CGPoint = .zero
+    @State private var innerCircleLocation: CGPoint = .zero
     @GestureState private var fingerLocation: CGPoint? = nil
     @GestureState private var startLocation: CGPoint? = nil
 
     private let bigCircleRadius: CGFloat = 100
-    private let input: (Double)-> Void
-    private var velocity: CGPoint = .zero
+    private let controllerposition: ControllerPosition
+    private let input: (Double, Bool)-> Void
 
-    init(input: @escaping (Double)-> Void) {
+    init(controllerposition: ControllerPosition,
+         input: @escaping (Double, Bool)-> Void) {
+        self.controllerposition = controllerposition
         self.input = input
+
+    }
+
+    private var isActive: Bool {
+        fingerLocation != nil
     }
 
     private var simpleDrag: some Gesture {
@@ -60,7 +67,7 @@ struct JoystickView: View {
                 let newY = location.y + sin(angle) * clampedDistance
 
                 innerCircleLocation = CGPoint(x: newX, y: newY)
-                input(calcAngle())
+                input(calcAngle(), isActive)
             }
             .updating($fingerLocation) { (value, fingerLocation, transaction) in
                 fingerLocation = value.location
@@ -68,6 +75,7 @@ struct JoystickView: View {
             .onEnded { value in
                 let center = location
                 innerCircleLocation = center
+                input(calcAngle(), isActive)
             }
     }
 
@@ -89,11 +97,31 @@ struct JoystickView: View {
                 .frame(width: bigCircleRadius * 2, height: bigCircleRadius * 2)
                 .position(location)
 
+            if positionOnTouch() {
+                Rectangle()
+                    .fill(.black.opacity(0.0001))
+                    .onTapGesture { tappedPosition in
+                        location = tappedPosition
+                        innerCircleLocation = tappedPosition
+                    }
+            }
+
             Circle()
                 .fill(.ultraThinMaterial)
                 .frame(width: 50, height: 50)
                 .position(innerCircleLocation)
                 .gesture(fingerDrag)
+        }
+    }
+
+    private func positionOnTouch() -> Bool {
+        switch controllerposition {
+        case .onTouch:
+            return true
+        case .fixed(let position):
+            location = position
+            innerCircleLocation = position
+            return false
         }
     }
 }

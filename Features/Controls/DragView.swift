@@ -10,8 +10,13 @@ import SwiftUI
 
 struct DragView: View {
     private let input:(Double)-> Void
+    private var position: CGPoint
+    private let controllerposition: ControllerPosition
 
-    init(input: @escaping (Double)-> Void) {
+    init(controllerposition: ControllerPosition,
+         input: @escaping (Double)-> Void) {
+        self.position = CGPoint()
+        self.controllerposition = controllerposition
         self.input = input
     }
 
@@ -30,6 +35,17 @@ struct DragView: View {
                     })
             )
             .padding()
+            .position(position)
+//            .if(positionOnTouch(), transform: { view in
+//                view
+//                    .background() {
+//                        Rectangle()
+//                            .fill(.black.opacity(0.01))
+//                            .onTapGesture { tappedPosition in
+//                                position = tappedPosition
+//                            }
+//                    }
+//            })
     }
 
     private func angle(from origin: CGPoint, to point: CGPoint) -> CGFloat {
@@ -43,5 +59,15 @@ struct DragView: View {
         let radians = angle(from: origin, to: point)
         let degrees = radians * 180.0 / CGFloat.pi
         return degrees
+    }
+
+    private mutating func positionOnTouch() -> Bool {
+        switch controllerposition {
+        case .onTouch:
+            return true
+        case .fixed(let position):
+            self.position = position
+            return false
+        }
     }
 }

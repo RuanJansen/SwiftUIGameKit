@@ -11,6 +11,9 @@ import SwiftUIGameKit
 
 struct DashboardView: View {
     @State private var position: CGPoint = .zero
+    @State private var controllerPosition: CGPoint = CGPoint(x: 200, y: 500)
+    @State private var isActive: Bool = false
+
     var body: some View {
         GameView {
             GeometryReader { proxy in
@@ -25,16 +28,24 @@ struct DashboardView: View {
                     }
             }
         }
-        .controlable(controllerType: .joystick) { angle in
-            updatePosition(with: angle)
+        .controlable(controllerType: .joystick, controllerPosition: .onTouch) { angle, isActive in
+            self.isActive = isActive
+            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
+                if !self.isActive {
+                    timer.invalidate()
+                } else {
+                    updatePosition(with: angle)
+                }
+            }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private func updatePosition(with angle: Double) {
         let angleInRadians = angle * .pi / 180.0
 
-        let deltaX = cos(angleInRadians) * 2.5
-        let deltaY = sin(angleInRadians) * 2.5
+        let deltaX = cos(angleInRadians) * 0.5
+        let deltaY = sin(angleInRadians) * 0.5
 
         position.x += CGFloat(deltaX)
         position.y += CGFloat(deltaY)

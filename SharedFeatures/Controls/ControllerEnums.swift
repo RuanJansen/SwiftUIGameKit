@@ -12,3 +12,8 @@ public enum ControllerType {
     case drag
     case arrows
 }
+
+public enum ControllerPosition {
+    case onTouch
+    case fixed(position: CGPoint)
+}
