@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct JoystickView: View {
-    @State private var location: CGPoint = .zero
-    @State private var innerCircleLocation: CGPoint = .zero
+    @State private var location: CGPoint = CGPoint(x: 200, y: 500)
+    @State private var innerCircleLocation: CGPoint = CGPoint(x: 200, y: 500)
     @GestureState private var fingerLocation: CGPoint? = nil
     @GestureState private var startLocation: CGPoint? = nil
 

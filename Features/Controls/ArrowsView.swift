@@ -38,7 +38,8 @@ struct ArrowsView: View {
                         Image(systemName: "arrowshape.down.circle")
                             .font(.title)
                     }
-                }        .padding()
+                }        
+                .padding()
 
                 HStack {
                     Button {
@@ -54,9 +55,10 @@ struct ArrowsView: View {
                         Image(systemName: "arrowshape.right.circle")
                             .font(.title)
                     }
-                }        .padding()
-
+                }        
+                .padding()
             }
+            .buttonRepeatBehavior(.enabled)
             .frame(width: 150, height: 150)
         }
     }

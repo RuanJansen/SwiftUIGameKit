@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let SwiftUIView =  DashboardView()
+        let SwiftUIView = NavigationStack { DashboardView() }
         let viewContoller = UIHostingController(rootView: SwiftUIView)
         viewContoller.modalPresentationStyle = .fullScreen
         self.present(viewContoller, animated: animated)

@@ -3,7 +3,7 @@ use_frameworks!
 PLATFORM_VERSION = '16.0'
 SWIFT_VERSION = '5'
 
-platform :ios, '16.0'
+platform :ios, '17.0'
 
 target 'SwiftUIGameKit_Example' do
   pod 'SwiftUIGameKit', :path => '../'

@@ -23,8 +23,8 @@ public extension View where Self: Controlable {
                     input(angle, isActive)
                 }
             case .drag:
-                DragView() { angle in
-                    input(angle, true)
+                DragView() { angle, isActive  in
+                    input(angle, isActive)
                 }
             case .arrows(let position):
                 ArrowsView(position: position) { direction in
