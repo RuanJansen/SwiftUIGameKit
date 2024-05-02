@@ -9,24 +9,28 @@ import Foundation
 import SwiftUI
 
 struct DragView: View {
-    private let input:(Double)-> Void
+    private let input:(Double, Bool)-> Void
 
-    init(input: @escaping (Double)-> Void) {
+    @State private var isActive: Bool = false
+
+    init(input: @escaping (Double, Bool)-> Void) {
         self.input = input
     }
 
     var body: some View {
         RoundedRectangle(cornerRadius: 30)
-            .fill(.blue.opacity(0.01))
+            .fill(.black.opacity(0.01))
             .gesture(
                 DragGesture()
                     .onChanged({ value in
+                        isActive = true
                         input(angleInDegrees(from: value.startLocation,
-                                             to: value.location))
+                                             to: value.location), isActive)
                     })
                     .onEnded({ value in
+                        isActive = false
                         input(angleInDegrees(from: value.startLocation,
-                                             to: value.location))
+                                             to: value.location), isActive)
                     })
             )
             .padding()

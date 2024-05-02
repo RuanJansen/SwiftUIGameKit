@@ -15,20 +15,20 @@ public protocol Controlable {
 
 public extension View where Self: Controlable {
     func controlable(controllerType: ControllerType,
-                     input: @escaping (Double)-> Void) -> some View {
+                     input: @escaping (Double, Bool)-> Void) -> some View {
         self.overlay {
             switch controllerType {
-            case .joystick:
-                JoystickView() { angle in
-                    input(angle)
+            case .joystick(let controllerPosition):
+                JoystickView(controllerposition: controllerPosition) { angle, isActive in
+                    input(angle, isActive)
                 }
             case .drag:
-                DragView() { angle in
-                    input(angle)
+                DragView() { angle, isActive  in
+                    input(angle, isActive)
                 }
-            case .arrows:
-                ArrowsView() { direction in
-                    input(direction)
+            case .arrows(let position):
+                ArrowsView(position: position) { direction in
+                    input(direction, true)
                 }
             }
         }
