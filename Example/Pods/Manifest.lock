@@ -1,5 +1,5 @@
 PODS:
-  - SwiftUIGameKit (0.1.0)
+  - SwiftUIGameKit (1.0.0)
 
 DEPENDENCIES:
   - SwiftUIGameKit (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SwiftUIGameKit: 63214cca1ac380cc81adfa8c9c26502fe766a9dd
+  SwiftUIGameKit: c3d00049c0ead09acf17e12e58e74070ed7da24d
 
-PODFILE CHECKSUM: 3d664993a659a4e6f0505a84bd6f7a6a7272bc35
+PODFILE CHECKSUM: 397c668132ae6e6cda7edc28fbcd252898ef4b5f
 
 COCOAPODS: 1.15.2

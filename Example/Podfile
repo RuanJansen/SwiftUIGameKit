@@ -1,6 +1,6 @@
 use_frameworks!
 
-PLATFORM_VERSION = '16.0'
+PLATFORM_VERSION = '17.0'
 SWIFT_VERSION = '5'
 
 platform :ios, '17.0'
