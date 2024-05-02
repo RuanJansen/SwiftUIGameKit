@@ -20,24 +20,25 @@ struct DashboardView: View {
     @State var currentAngle: Double = 0.0
 
     var body: some View {
-        GameView {
-            GeometryReader { proxy in
-                Circle()
-                    .fill(.pink)
-                    .frame(width: 50)
-                    .onAppear {
-                        viewFrame = proxy.frame(in: .local)
-                        let x = proxy.size.width/2
-                        let y = proxy.size.height/3
-                        position = CGPoint(x: x, y: y)
-                    }
-                    .position(position)
+        NavigationStack {
+            GameView {
+                GeometryReader { proxy in
+                    Circle()
+                        .fill(.pink)
+                        .frame(width: 50)
+                        .onAppear {
+                            viewFrame = proxy.frame(in: .local)
+                            let x = proxy.size.width/2
+                            let y = proxy.size.height/3
+                            position = CGPoint(x: x, y: y)
+                        }
+                        .position(position)
+                }
             }
-        }
-        .controlable(controllerType: controllerType) { angle, isActive in
-            self.isActive = isActive
-            currentAngle = angle
-            switch controllerType {
+            .controlable(controllerType: controllerType) { angle, isActive in
+                self.isActive = isActive
+                currentAngle = angle
+                switch controllerType {
                 case .joystick(_):
                     Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
                         if currentAngle != angle {
@@ -50,37 +51,38 @@ struct DashboardView: View {
                         }
                     }
                 case .drag:
-                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-                    if currentAngle != angle {
-                        timer.invalidate()
-                        updatePosition(with: angle, by: sensitivity)
-                    } else if self.isActive {
-                        updatePosition(with: angle, by: sensitivity)
-                    } else {
-                        timer.invalidate()
+                    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
+                        if currentAngle != angle {
+                            timer.invalidate()
+                            updatePosition(with: angle, by: sensitivity)
+                        } else if self.isActive {
+                            updatePosition(with: angle, by: sensitivity)
+                        } else {
+                            timer.invalidate()
+                        }
                     }
-                }
                 case .arrows(_):
                     updatePosition(with: angle, by: sensitivity)
                 }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    presentSettings.toggle()
-                } label: {
-                    Image(systemName: "gear")
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        presentSettings.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
                 }
             }
-        }
-        .sheet(isPresented: $presentSettings) {
-            SettingsView(position: $position, controllerPosition: $controllerPosition, controllerType: $controllerType, sensitivity: $sensitivity, isActive: $isActive).presentationDetents([.medium, .large])
-        }
-        .onAppear() {
-            position = CGPoint(x: 200, y: 100)
-            controllerPosition = CGPoint(x: 200, y: 500)
-            sensitivity = 5
+            .sheet(isPresented: $presentSettings) {
+                SettingsView(position: $position, controllerPosition: $controllerPosition, controllerType: $controllerType, sensitivity: $sensitivity, isActive: $isActive).presentationDetents([.medium, .large])
+            }
+            .onAppear() {
+                position = CGPoint(x: 200, y: 100)
+                controllerPosition = CGPoint(x: 200, y: 500)
+                sensitivity = 5
+            }
         }
     }
 
