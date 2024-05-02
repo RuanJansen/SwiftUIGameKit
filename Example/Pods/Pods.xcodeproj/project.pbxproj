@@ -47,7 +47,7 @@
 		128F581A6021B3353829463045378606 /* Pods-SwiftUIGameKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftUIGameKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		16D91241723FCE90C08B0E739042C503 /* Pods-SwiftUIGameKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftUIGameKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		1B2F5606D3D675BA05BE75D702C7C039 /* Pods-SwiftUIGameKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUIGameKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1F4E0FB748848F39DBFDC132E1E2884A /* SwiftUIGameKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftUIGameKit; path = SwiftUIGameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F4E0FB748848F39DBFDC132E1E2884A /* SwiftUIGameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUIGameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E1E54826DDE8697BD407D078566630 /* Controlable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Controlable.swift; sourceTree = "<group>"; };
 		2C383072D5CBD4E4B51C1D94392A4DE3 /* Pods-SwiftUIGameKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUIGameKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		345CFB7F912369E0B02AB0086A0986EC /* SwiftUIGameKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwiftUIGameKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -143,7 +143,7 @@
 			children = (
 				0B549917BA8D26DC34A0EC081A74B1EB /* Pods-SwiftUIGameKit_Example */,
 				E926FE18ACE39BBC2FD93207BCA4BF48 /* Pods-SwiftUIGameKit_Tests */,
-				1F4E0FB748848F39DBFDC132E1E2884A /* SwiftUIGameKit */,
+				1F4E0FB748848F39DBFDC132E1E2884A /* SwiftUIGameKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 			);
 			name = SwiftUIGameKit;
 			productName = SwiftUIGameKit;
-			productReference = 1F4E0FB748848F39DBFDC132E1E2884A /* SwiftUIGameKit */;
+			productReference = 1F4E0FB748848F39DBFDC132E1E2884A /* SwiftUIGameKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		827725D116863F5641F5962AA6435848 /* Pods-SwiftUIGameKit_Example */ = {
@@ -378,6 +378,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4B0398A80FEFB43E293C6E86611FE3C1 = {
+						LastSwiftMigration = 1530;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -499,7 +504,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -639,7 +644,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

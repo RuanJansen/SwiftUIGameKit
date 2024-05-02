@@ -13,6 +13,7 @@
 		B115D4160E40116CFD0CE4B2 /* Pods_SwiftUIGameKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46222E4918901A6D16841DC /* Pods_SwiftUIGameKit_Example.framework */; };
 		F3FA5B312BE0048300CACD5D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA5B302BE0048300CACD5D /* DashboardView.swift */; };
 		F3FA5B472BE00C2600CACD5D /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA5B462BE00C2600CACD5D /* ExampleApp.swift */; };
+		F3FA5B4D2BE3DDFB00CACD5D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA5B4C2BE3DDFB00CACD5D /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		E11E602CA9FE3F602C1A160C /* Pods-SwiftUIGameKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIGameKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUIGameKit_Tests/Pods-SwiftUIGameKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3FA5B302BE0048300CACD5D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F3FA5B462BE00C2600CACD5D /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
+		F3FA5B4C2BE3DDFB00CACD5D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FBB2499EA01CF218C19573D6 /* Pods_SwiftUIGameKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIGameKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				F3FA5B302BE0048300CACD5D /* DashboardView.swift */,
+				F3FA5B4C2BE3DDFB00CACD5D /* SettingsView.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -215,12 +218,12 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = MEKPW4F5YF;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1530;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = MEKPW4F5YF;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1530;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3FA5B4D2BE3DDFB00CACD5D /* SettingsView.swift in Sources */,
 				F3FA5B472BE00C2600CACD5D /* ExampleApp.swift in Sources */,
 				F3FA5B312BE0048300CACD5D /* DashboardView.swift in Sources */,
 			);
@@ -469,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -486,7 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -508,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUIGameKit_Example.app/SwiftUIGameKit_Example";
 			};
 			name = Debug;
@@ -527,7 +531,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUIGameKit_Example.app/SwiftUIGameKit_Example";
 			};
 			name = Release;
