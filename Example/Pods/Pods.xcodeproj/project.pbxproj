@@ -50,7 +50,7 @@
 		1F4E0FB748848F39DBFDC132E1E2884A /* SwiftUIGameKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftUIGameKit; path = SwiftUIGameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E1E54826DDE8697BD407D078566630 /* Controlable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Controlable.swift; sourceTree = "<group>"; };
 		2C383072D5CBD4E4B51C1D94392A4DE3 /* Pods-SwiftUIGameKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUIGameKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		345CFB7F912369E0B02AB0086A0986EC /* SwiftUIGameKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwiftUIGameKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		345CFB7F912369E0B02AB0086A0986EC /* SwiftUIGameKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwiftUIGameKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5100ABBF73462D6D3FF877A544B0BAAF /* Pods-SwiftUIGameKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftUIGameKit_Example.modulemap"; sourceTree = "<group>"; };
 		5E3A3A85FBD0239CD0A64AC487B206A6 /* Pods-SwiftUIGameKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUIGameKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		683FBD4C6D5EED20D53A8C5FDA4DCB4D /* Pods-SwiftUIGameKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUIGameKit_Example-Info.plist"; sourceTree = "<group>"; };
@@ -62,9 +62,9 @@
 		7578A42E20966C677348D0093C24C8B7 /* Pods-SwiftUIGameKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftUIGameKit_Tests.modulemap"; sourceTree = "<group>"; };
 		8F5F9B5E23FEEA439B4DD2A72ECD05CF /* Pods-SwiftUIGameKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftUIGameKit_Example-dummy.m"; sourceTree = "<group>"; };
 		8F9B9C75F60C75D0724163CB215B1333 /* Pods-SwiftUIGameKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUIGameKit_Tests-Info.plist"; sourceTree = "<group>"; };
-		93BE97D19C9BA1EBD00286AA9D284CA7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		93BE97D19C9BA1EBD00286AA9D284CA7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9B6E3507C433E133EF2A6231996BF4A6 /* SwiftUIGameKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIGameKit-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1D2579952B8A926D074DE83B99D1269 /* ArrowsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArrowsView.swift; sourceTree = "<group>"; };
 		A901B1E0AEF72FFB676ADF929ECE860B /* Pods-SwiftUIGameKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUIGameKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFA96A17244F2F96014B3BFA720841F0 /* JoystickView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		CC1906B55489C7E57B2E5DC9F163272F /* View+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D0A8B5687B6AEAEB763AC5D94F977A7F /* SwiftUIGameKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUIGameKit.debug.xcconfig; sourceTree = "<group>"; };
 		DFE7B7027C95EA768FC2380FCDFD778B /* Pods-SwiftUIGameKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftUIGameKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E19F7CC87BE1447F1F5C0B24B579B5B1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E19F7CC87BE1447F1F5C0B24B579B5B1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E2351206F162D4E7A544665ADBBB9A93 /* SwiftUIGameKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIGameKit-prefix.pch"; sourceTree = "<group>"; };
 		E4A941A826D2EAD9031A04AB728AFE14 /* Pods-SwiftUIGameKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUIGameKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E913A3D40FC5151813BEE7EE05CBD873 /* Pods-SwiftUIGameKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUIGameKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -119,7 +119,6 @@
 				B3A0114A0D26B5672FB068FD0722E79D /* DragView.swift */,
 				AFA96A17244F2F96014B3BFA720841F0 /* JoystickView.swift */,
 			);
-			name = Controls;
 			path = Controls;
 			sourceTree = "<group>";
 		};
@@ -170,11 +169,11 @@
 		5445746BE41F1A8D0CE36F71E429EEE4 /* SwiftUIGameKit */ = {
 			isa = PBXGroup;
 			children = (
-				F778FAB285F4FDC1CB81462EF5787C81 /* Features */,
-				EBA5D983171965F48B3D43F56DFC4859 /* Pod */,
 				34A229C662DABFB470007697D9D34251 /* SharedFeatures */,
-				F30D9E687CFFDF53EBCCECEE29699E3C /* Support Files */,
+				F778FAB285F4FDC1CB81462EF5787C81 /* Features */,
 				CC5E283C56793A27991742636F9E36F4 /* Utilities */,
+				F30D9E687CFFDF53EBCCECEE29699E3C /* Support Files */,
+				EBA5D983171965F48B3D43F56DFC4859 /* Pod */,
 			);
 			name = SwiftUIGameKit;
 			path = ../..;
@@ -211,7 +210,6 @@
 				26E1E54826DDE8697BD407D078566630 /* Controlable.swift */,
 				FD76994C3864BAAAF40C86BF6B66D510 /* ControllerEnums.swift */,
 			);
-			name = Controls;
 			path = Controls;
 			sourceTree = "<group>";
 		};
@@ -806,8 +804,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

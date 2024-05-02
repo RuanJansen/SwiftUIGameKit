@@ -98,9 +98,9 @@
 		607FACD21AFB9204008FA782 /* Example for SwiftUIGameKit */ = {
 			isa = PBXGroup;
 			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				F3FA5B462BE00C2600CACD5D /* ExampleApp.swift */,
 				F3FA5B2F2BE0047100CACD5D /* Dashboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for SwiftUIGameKit";
