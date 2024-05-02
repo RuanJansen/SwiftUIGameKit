@@ -40,21 +40,18 @@ struct DashboardView: View {
             switch controllerType {
                 case .joystick(_):
                     Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-                        if currentAngle != angle {
-                            timer.invalidate()
-                            updatePosition(with: angle, by: sensitivity)
-                        } else if self.isActive {
-                            updatePosition(with: angle, by: sensitivity)
+                        if self.isActive {
+//                            if currentAngle != angle {
+//                                timer.invalidate()
+//                            }
+                            updatePosition(with: currentAngle, by: sensitivity)
                         } else {
                             timer.invalidate()
                         }
                     }
                 case .drag:
                 Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-                    if currentAngle != angle {
-                        timer.invalidate()
-                        updatePosition(with: angle, by: sensitivity)
-                    } else if self.isActive {
+                    if self.isActive {
                         updatePosition(with: angle, by: sensitivity)
                     } else {
                         timer.invalidate()
@@ -79,8 +76,9 @@ struct DashboardView: View {
         }
         .onAppear() {
             position = CGPoint(x: 200, y: 100)
+            controllerType = .joystick(position: .onTouch)
             controllerPosition = CGPoint(x: 200, y: 500)
-            sensitivity = 5
+            sensitivity = 1
         }
     }
 
