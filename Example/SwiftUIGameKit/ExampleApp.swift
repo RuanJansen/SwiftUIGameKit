@@ -29,7 +29,9 @@ struct ExampleApp: App {
                     }
                 }
             } else {
-                DashboardView()
+                NavigationStack {
+                    DashboardView()
+                }
             }
         }
     }
