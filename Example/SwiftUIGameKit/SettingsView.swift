@@ -15,9 +15,8 @@ struct SettingsView: View {
     @Binding var controllerType: ControllerType
     @Binding var sensitivity: Float
     @Binding var isActive: Bool
+    @Binding var isShowingInputText: Bool
 
-    @State var xCoordinate: CGFloat = 0
-    @State var yCoordinate: CGFloat = 0
 
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()
@@ -28,15 +27,24 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Picker("", selection: $controllerType) {
+                Picker("Controller Type", selection: $controllerType) {
                     ForEach(ControllerType.allCases, id: \.self) { option in
                         Text(option.description.capitalized)
                     }
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
-
+                
                 Form {
+
+                    Section {
+                        Toggle(isOn: $isShowingInputText, label: {
+                            Text("Should show angle")
+                        })
+                    } header: {
+                        Text("Angle")
+                    }
+
                     Section {
                         VStack {
                             Slider(value: $sensitivity, in: 0...10)
@@ -54,21 +62,12 @@ struct SettingsView: View {
                     Button {
                         position = CGPoint(x: 200, y: 100)
                         controllerPosition = CGPoint(x: 200, y: 500)
-                        sensitivity = 0.5
+                        sensitivity = 1
                         isActive = false
                     } label: {
                         Text("Reset")
                     }
                 }
-
-//                ToolbarItem(placement: .keyboard) {
-//                    Button {
-//                        controllerPosition = CGPoint(x: xCoordinate,
-//                                                     y: yCoordinate)
-//                    } label: {
-//                        Text("Submit")
-//                    }
-//                }
             }
             .padding(.top)
             .navigationTitle("Settings")

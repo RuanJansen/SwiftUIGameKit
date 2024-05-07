@@ -21,8 +21,10 @@ struct ExampleApp: App {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 50)
+
                 }
                 .font(.title)
+                .foregroundStyle(Color.cyan)
                 .onAppear() {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         launching.toggle()
@@ -32,6 +34,7 @@ struct ExampleApp: App {
                 NavigationStack {
                     DashboardView()
                 }
+                .tint(.cyan)
             }
         }
     }

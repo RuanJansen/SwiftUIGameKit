@@ -9,19 +9,32 @@ import Foundation
 import SwiftUI
 
 struct JoystickView: View {
-    @State private var location: CGPoint = CGPoint(x: 200, y: 500)
-    @State private var innerCircleLocation: CGPoint = CGPoint(x: 200, y: 500)
-    @GestureState private var fingerLocation: CGPoint? = nil
-    @GestureState private var startLocation: CGPoint? = nil
-
-    private let bigCircleRadius: CGFloat = 100
     private let controllerposition: ControllerPosition
     private let input: (Double, Bool)-> Void
+
+    private let bigCircleRadius: CGFloat
+
+    @State 
+    private var location: CGPoint
+
+    @State
+    private var innerCircleLocation: CGPoint
+
+    @GestureState 
+    private var fingerLocation: CGPoint?
+
+    @GestureState
+    private var startLocation: CGPoint?
 
     init(controllerposition: ControllerPosition,
          input: @escaping (Double, Bool)-> Void) {
         self.controllerposition = controllerposition
         self.input = input
+
+        self.bigCircleRadius = 100
+
+        self.location = CGPoint(x: 200, y: 500)
+        self.innerCircleLocation = CGPoint(x: 200, y: 500)
     }
 
     private var isActive: Bool {

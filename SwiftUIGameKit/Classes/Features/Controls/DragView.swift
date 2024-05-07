@@ -11,10 +11,11 @@ import SwiftUI
 struct DragView: View {
     private let input:(Double, Bool)-> Void
 
-    @State private var isActive: Bool = false
+    @State private var isActive: Bool
 
     init(input: @escaping (Double, Bool)-> Void) {
         self.input = input
+        self.isActive = false
     }
 
     var body: some View {
