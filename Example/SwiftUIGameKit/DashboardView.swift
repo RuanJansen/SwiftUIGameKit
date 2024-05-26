@@ -21,6 +21,7 @@ struct DashboardView: View {
     @State private var position: CGPoint = CGPoint(x: 200, y: 200)
     @State private var presentSettings: Bool = false
     @State private var viewFrame: CGRect = CGRect()
+    @State private var isShowingBall: Bool = true
 
     // Input Text
     @State private var isShowingInputText: Bool = true
@@ -33,12 +34,15 @@ struct DashboardView: View {
                         VStack {
                             Text(String(describing: self.currentAngle))
                             Spacer()
+                                .position(position)
                         }
                     }
-                    Circle()
-                        .fill(.cyan)
-                        .frame(width: 50)
-                        .position(position)
+                    if isShowingBall {
+                        Circle()
+                            .fill(.cyan)
+                            .frame(width: 50)
+                            .position(position)
+                    }
                 }
             }
         }
@@ -49,9 +53,6 @@ struct DashboardView: View {
             case .joystick(_):
                 Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
                     if self.isActive {
-//                            if currentAngle != angle {
-//                                timer.invalidate()
-//                            }
                         updatePosition(with: self.currentAngle, by: self.sensitivity)
                     } else {
                         timer.invalidate()
@@ -82,7 +83,7 @@ struct DashboardView: View {
             }
         }
         .sheet(isPresented: $presentSettings) {
-            SettingsView(position: $position, controllerPosition: $controllerPosition, controllerType: $controllerType, sensitivity: $sensitivity, isActive: $isActive, isShowingInputText: $isShowingInputText).presentationDetents([.medium, .large])
+            SettingsView(position: $position, controllerPosition: $controllerPosition, controllerType: $controllerType, sensitivity: $sensitivity, isActive: $isActive, isShowingInputText: $isShowingInputText, isShowingBall: $isShowingBall).presentationDetents([.medium, .large])
         }
     }
 

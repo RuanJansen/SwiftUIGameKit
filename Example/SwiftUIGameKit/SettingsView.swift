@@ -16,6 +16,7 @@ struct SettingsView: View {
     @Binding var sensitivity: Float
     @Binding var isActive: Bool
     @Binding var isShowingInputText: Bool
+    @Binding var isShowingBall: Bool
 
 
     let formatter: NumberFormatter = {
@@ -41,8 +42,12 @@ struct SettingsView: View {
                         Toggle(isOn: $isShowingInputText, label: {
                             Text("Should show angle")
                         })
+
+                        Toggle(isOn: $isShowingBall, label: {
+                            Text("Should show ball")
+                        })
                     } header: {
-                        Text("Angle")
+                        Text("Show items")
                     }
 
                     Section {
